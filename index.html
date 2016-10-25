@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Calvin and Hobbes Animation</title>
+<!DOCTYPE html><html><head><title>Eight Perfect Shuffles</title>
 
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="shortcut icon" href="favicon.ico">
@@ -20,8 +20,8 @@
 		<div id="popup1" class="overlay">
 			<div class="popup">
 				<a class="close" style="right: 30px;" href="#">&times;</a>
-				<div style="font-family:Georgia; color:white; text-align:center; text-decoration:underline; font-size:38px">Calvin and Hobbes Animation</div>
-				<span style="font-family:Georgia; font-size:30px; color:white; text-align:justify;"><br>Play German Whist against a computer.<br></span><br><br>
+				<div style="font-family:Georgia; color:white; text-align:center; text-decoration:underline; font-size:38px">8 Perfect Shuffles</div>
+				<span style="font-family:Georgia; font-size:30px; color:white; text-align:justify;"><br>After eight perfect riffle shuffles a deck of playing cards is returned to its original order.<br></span><br>
 			</div>
 		</div>
 
@@ -31,37 +31,64 @@
 </html>
 
 <script type="text/javascript">
-var field={width:590, height:270};
+var field={width:875, height:300};
 var fieldcolor="white";
-var time=-100;
-var fps=65;
-var totalframes=1120;
-var fighting=new Image();
-fighting.src="Fighting.png";
-var laughing=new Image();
-laughing.src="Laughing.png";
-var sleeping=new Image();
-sleeping.src="Sleeping.png";
-var z1=new Image();
-z1.src="Z1.png";
-var z2=new Image();
-z2.src="Z2.png";
-var z3=new Image();
-z3.src="Z3.png";
-var z4=new Image();
-z4.src="Z4.png";
-var z5=new Image();
-z5.src="Z5.png";
-var s1=new Image();
-s1.src="Stars1.png";
-var s2=new Image();
-s2.src="Stars2.png";
-var s3=new Image();
-s3.src="Stars3.png";
-var s4=new Image();
-s4.src="Stars4.png";
-var s5=new Image();
-s5.src="Stars5.png";
+var fps=60;
+var time=0;
+
+var c=[];
+c[1] = new Image(); c[1].src = "Card Images/CA.png";
+c[2] = new Image(); c[2].src = "Card Images/C2.png";
+c[3] = new Image(); c[3].src = "Card Images/C3.png";
+c[4] = new Image(); c[4].src = "Card Images/C4.png";
+c[5] = new Image(); c[5].src = "Card Images/C5.png";
+c[6] = new Image(); c[6].src = "Card Images/C6.png";
+c[7] = new Image(); c[7].src = "Card Images/C7.png";
+c[8] = new Image(); c[8].src = "Card Images/C8.png";
+c[9] = new Image(); c[9].src = "Card Images/C9.png";
+c[10] = new Image(); c[10].src = "Card Images/C10.png";
+c[11] = new Image(); c[11].src = "Card Images/CJ.png";
+c[12] = new Image(); c[12].src = "Card Images/CQ.png";
+c[13] = new Image(); c[13].src = "Card Images/CK.png";
+c[14] = new Image(); c[14].src = "Card Images/DA.png";
+c[15] = new Image(); c[15].src = "Card Images/D2.png";
+c[16] = new Image(); c[16].src = "Card Images/D3.png";
+c[17] = new Image(); c[17].src = "Card Images/D4.png";
+c[18] = new Image(); c[18].src = "Card Images/D5.png";
+c[19] = new Image(); c[19].src = "Card Images/D6.png";
+c[20] = new Image(); c[20].src = "Card Images/D7.png";
+c[21] = new Image(); c[21].src = "Card Images/D8.png";
+c[22] = new Image(); c[22].src = "Card Images/D9.png";
+c[23] = new Image(); c[23].src = "Card Images/D10.png";
+c[24] = new Image(); c[24].src = "Card Images/DJ.png";
+c[25] = new Image(); c[25].src = "Card Images/DQ.png";
+c[26] = new Image(); c[26].src = "Card Images/DK.png";
+c[27] = new Image(); c[27].src = "Card Images/HA.png";
+c[28] = new Image(); c[28].src = "Card Images/H2.png";
+c[29] = new Image(); c[29].src = "Card Images/H3.png";
+c[30] = new Image(); c[30].src = "Card Images/H4.png";
+c[31] = new Image(); c[31].src = "Card Images/H5.png";
+c[32] = new Image(); c[32].src = "Card Images/H6.png";
+c[33] = new Image(); c[33].src = "Card Images/H7.png";
+c[34] = new Image(); c[34].src = "Card Images/H8.png";
+c[35] = new Image(); c[35].src = "Card Images/H9.png";
+c[36] = new Image(); c[36].src = "Card Images/H10.png";
+c[37] = new Image(); c[37].src = "Card Images/HJ.png";
+c[38] = new Image(); c[38].src = "Card Images/HQ.png";
+c[39] = new Image(); c[39].src = "Card Images/HK.png";
+c[40] = new Image(); c[40].src = "Card Images/SA.png";
+c[41] = new Image(); c[41].src = "Card Images/S2.png";
+c[42] = new Image(); c[42].src = "Card Images/S3.png";
+c[43] = new Image(); c[43].src = "Card Images/S4.png";
+c[44] = new Image(); c[44].src = "Card Images/S5.png";
+c[45] = new Image(); c[45].src = "Card Images/S6.png";
+c[46] = new Image(); c[46].src = "Card Images/S7.png";
+c[47] = new Image(); c[47].src = "Card Images/S8.png";
+c[48] = new Image(); c[48].src = "Card Images/S9.png";
+c[49] = new Image(); c[49].src = "Card Images/S10.png";
+c[50] = new Image(); c[50].src = "Card Images/SJ.png";
+c[51] = new Image(); c[51].src = "Card Images/SQ.png";
+c[52] = new Image(); c[52].src = "Card Images/SK.png";
 
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
@@ -71,245 +98,27 @@ canvas.height = field.height;
 
 function draw(){
 
-if(time<180){
-	ctx.fillStyle="black";
-	ctx.fillRect(0, 0, field.width, field.height);
-	ctx.fillStyle=fieldcolor;
-	roundRect(ctx, 0, 0, field.width, field.height, 60, true);
-	ctx.save();
-	ctx.translate(70+2*time,130);
-	ctx.rotate(0.065*time+3);
-	ctx.drawImage(fighting, -100, -102);
-	ctx.restore();
-}
+	if(time<50){
+		ctx.fillStyle=fieldcolor;
+		ctx.fillRect(0, 0, field.width, field.height);
+		for(i=1; i<53; i++){ctx.drawImage(c[i], 15*i, 15);}
+	}
 
-if(time>179 && time<240){
-	ctx.fillStyle="black";
-	ctx.fillRect(0, 0, field.width, field.height);
-	ctx.fillStyle=fieldcolor;
-	roundRect(ctx, 3*time-540, 0, 540+field.width-3*time, field.height, 60, true);
-	ctx.save();
-	ctx.globalAlpha=(240-time)/60;
-	ctx.translate(70+360,130);
-	ctx.rotate(0.065*180+3);
-	ctx.drawImage(fighting, -100, -102);
-	ctx.restore();
-}
+	if(time>49 && time<80){
+		ctx.fillStyle=fieldcolor;
+		ctx.fillRect(0, 0, field.width, field.height);
+		for(i=1; i<27; i++){ctx.drawImage(c[i], 15*i, 15);}
+		for(i=27; i<53; i++){ctx.drawImage(c[i], 15*i, 15+4*(time-49));}
 
-if(time>239 && time<293){
-	ctx.fillStyle="black";
-	ctx.fillRect(0, 0, field.width, field.height);
-	ctx.fillStyle=fieldcolor;
-	roundRect(ctx, 3*time-540, 0, 540+field.width-3*time, field.height, 60, true);
-}
+	}
 
-if(time>292 && time<380){
-	ctx.fillStyle="black";
-	ctx.fillRect(0, 0, field.width, field.height);
-	ctx.fillStyle=fieldcolor;
-	roundRect(ctx, 3*292-540, 0, 540+field.width-3*292, field.height, 60, true);
-}
+	time++;
 
-if(time>379 && time<420){
-	ctx.fillStyle="black";
-	ctx.fillRect(0, 0, field.width, field.height);
-	ctx.fillStyle=fieldcolor;
-	roundRect(ctx, 3*292-540, time-380, 540+field.width-3*292, 760+field.height-(2*time), 60, true);
-}
+	setTimeout(draw, 1000/fps);
 
-if(time>419 && time<800){
-	ctx.fillStyle="black";
-	ctx.fillRect(0, 0, field.width, field.height);
-	ctx.fillStyle=fieldcolor;
-	roundRect(ctx, 3*292-540, 499-460, 540+field.width-3*292, 920+field.height-(2*499), 60, true);
-}
-
-if(time>799 && time<1050){
-	ctx.fillStyle="black";
-	ctx.fillRect(0, 0, field.width, field.height);
-	ctx.fillStyle=fieldcolor;
-	roundRect(ctx, 336-Math.floor(336*(time-800)/249), 39-Math.floor(39*(time-800)/249), 540+field.width-3*292+Math.floor(336*(time-800)/249), field.height-78+Math.floor(78*(time-800)/249), 60, true);
-}
-
-if(time>259 && time<360){
-	ctx.save();
-	ctx.globalAlpha=(time-260)/100;
-	ctx.translate(70+360,130);
-	ctx.drawImage(laughing, -70, -55);
-	ctx.restore();
-}
-
-if(time>359 && time<460){
-	ctx.save();
-	ctx.translate(70+360,130);
-	ctx.drawImage(laughing, -70, -55);
-	ctx.restore();
-}
-
-if(time>459 && time<520){
-	ctx.save();
-	ctx.globalAlpha=(520-time)/60;
-	ctx.translate(70+360,130);
-	ctx.drawImage(laughing, -70, -55);
-	ctx.restore();
-}
-
-if(time>539 && time<640){
-	ctx.save();
-	ctx.globalAlpha=(time-540)/100;
-	ctx.translate(70+360,160);
-	ctx.drawImage(sleeping, -78, -63);
-	ctx.restore();
-}
-
-if(time>639 && time<800){
-	ctx.save();
-	ctx.translate(70+360,160);
-	ctx.drawImage(sleeping, -78, -63);
-	ctx.restore();
-}
-
-if(time>799 && time<1000){
-	ctx.save();
-	ctx.globalAlpha=(999-time)/200;
-	ctx.translate(70+360,160);
-	ctx.drawImage(sleeping, -78, -63);
-	ctx.restore();
-}
-
-if(time>600 && time<750){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(675-time)/75;
-	ctx.translate(70+360,160);
-	ctx.drawImage(z1, -61, -36);
-	ctx.restore();
-}
-
-if(time>650 && time<800){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(725-time)/75;
-	ctx.translate(70+360,160);
-	ctx.drawImage(z2, -66, -53);
-	ctx.restore();
-}
-
-if(time>700 && time<850){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(775-time)/75;
-	ctx.translate(70+360,160);
-	ctx.drawImage(z3, -76, -76);
-	ctx.restore();
-}
-
-if(time>600 && time<750){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(675-time)/75;
-	ctx.translate(70+360,160);
-	ctx.drawImage(z1, 30, -58);
-	ctx.restore();
-}
-
-if(time>650 && time<800){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(725-time)/75;
-	ctx.translate(70+360,160);
-	ctx.drawImage(z4, 45, -66);
-	ctx.restore();
-}
-
-if(time>700 && time<850){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(775-time)/75;
-	ctx.translate(70+360,160);
-	ctx.drawImage(z5, 59, -81);
-	ctx.restore();
-}
-
-if(time>-40 && time<10){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(15+time)/25;
-	ctx.drawImage(s4, 55, 81);
-	ctx.restore();
-}
-
-if(time>10 && time<60){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(35-time)/25;
-	ctx.drawImage(s1, 56, 171);
-	ctx.restore();
-}
-
-if(time>50 && time<100){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(75-time)/25;
-	ctx.drawImage(s5, 156, 61);
-	ctx.restore();
-}
-
-if(time>90 && time<140){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(115-time)/25;
-	ctx.drawImage(s2, 206, 151);
-	ctx.restore();
-}
-
-if(time>130 && time<180){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(155-time)/25;
-	ctx.drawImage(s3, 286, 111);
-	ctx.restore();
-}
-
-if(time>170 && time<220){
-	ctx.save();
-	ctx.globalAlpha=1-Math.abs(195-time)/25;
-	ctx.drawImage(s4, 486, 61);
-	ctx.restore();
-}
-
-time++;
-
-if(time>1049){time=-100;}
-
-setTimeout(draw, Math.floor(1000/fps));
 
 }
 
-function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
-  if (typeof stroke == 'undefined') {
-    stroke = true;
-  }
-  if (typeof radius === 'undefined') {
-    radius = 5;
-  }
-  if (typeof radius === 'number') {
-    radius = {tl: radius, tr: radius, br: radius, bl: radius};
-  } else {
-    var defaultRadius = {tl: 0, tr: 0, br: 0, bl: 0};
-    for (var side in defaultRadius) {
-      radius[side] = radius[side] || defaultRadius[side];
-    }
-  }
-  ctx.beginPath();
-  ctx.moveTo(x + radius.tl, y);
-  ctx.lineTo(x + width - radius.tr, y);
-  ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
-  ctx.lineTo(x + width, y + height - radius.br);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
-  ctx.lineTo(x + radius.bl, y + height);
-  ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
-  ctx.lineTo(x, y + radius.tl);
-  ctx.quadraticCurveTo(x, y, x + radius.tl, y);
-  ctx.closePath();
-  if (fill) {
-    ctx.fill();
-  }
-  if (stroke) {
-    ctx.stroke();
-  }
-
-}
-
-fighting.onload = draw();
+setTimeout(draw, 100);
 
 </script>
