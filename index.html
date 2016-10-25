@@ -171,18 +171,18 @@ function draw(){
 		if(!resetanimation){time=0;}
 	}
 
-	if(time>299){
-		fps=startingfps*2;
+	if(time>399){
+		fps=startingfps*1;
 		ctx.fillStyle=fieldcolor;
 		ctx.fillRect(0, 0, field.width, field.height);
 		ctx.font=textfont;
 		ctx.fillStyle=textcolor;
 		ctx.fillText(shuffletext, textxpos, textypos);
-		for(i=1; i<53; i++){if(time > 352-(53-i) && time <360+i){ctx.drawImage(c[i], 15*i, 121-(Math.abs(4*time-1320-(4*i))));} else{ctx.drawImage(c[i], 15*i, 1);}}
-		if(time==340){shuffletext="1st Shuffle";}
+		for(i=1; i<53; i++){if(time > 452-(53-i) && time <460+i){ctx.drawImage(c[i], 15*i, 121-(Math.abs(4*time-1720-(4*i))));} else{ctx.drawImage(c[i], 15*i, 1);}}
+		if(time==440){shuffletext="1st Shuffle";}
 	}
 
-	if(time>470){time=0; resetanimation=0; fps=startingfps;}
+	if(time>570){time=0; resetanimation=0; fps=startingfps;}
 
 
 
